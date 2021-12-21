@@ -4,7 +4,7 @@ import { useWineData } from "../../hooks/useWineData";
 import { Wine } from "../../types/Wine";
 
 const RoseWinePage: NextPage = () => {
-    const name = 'port';
+    const name = 'rose';
     const { data, error } = useWineData(name)
 
     if (error) return <Error />

@@ -4,7 +4,7 @@ import { useWineData } from "../../hooks/useWineData";
 import { Wine } from "../../types/Wine";
 
 const DessertWinePage: NextPage = () => {
-    const name = 'port';
+    const name = 'dessert';
     const { data, error } = useWineData(name)
 
     if (error) return <Error />
@@ -17,7 +17,7 @@ const DessertWinePage: NextPage = () => {
                 {data.map((wineData: Wine) => {
                     return (
                         <WineCard
-                            key={`port-wine-list-${wineData.id}`}
+                            key={`dessert-wine-list-${wineData.id}`}
                             wineData={wineData}
                         />
                     )

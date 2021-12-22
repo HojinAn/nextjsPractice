@@ -13,9 +13,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <p className={styles.title}>
           <a href="wines">Wines</a>
-        </h1>
+        </p>
+        <p className={styles.title}>
+          <a href="beers">Beers</a>
+        </p>
 
         {/* <p className={styles.description}>
           Get started by editing{' '}

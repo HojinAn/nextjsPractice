@@ -6,7 +6,7 @@ interface WineProps {
 }
 
 export const WineCard = ({ wineData }: WineProps) => {
-    const { wine, winery, rating: { average, reviews }, location } = wineData;
+    const { wine, winery, rating: { average, reviews }, location, image } = wineData;
 
     return (
         <div>
@@ -14,6 +14,7 @@ export const WineCard = ({ wineData }: WineProps) => {
             <p>🏡{winery}, {location}</p>
             <p>average rating: ⭐{average}</p>
             <p>{reviews}</p>
+            <Image src={image} alt={wine} />
         </div>
     )
 }

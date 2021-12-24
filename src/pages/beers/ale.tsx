@@ -7,7 +7,6 @@ const AleBeerPage: NextPage = () => {
 
     return (
         <div>
-            <h1>{name} Beer</h1>
             <BeerContainer name={name} />
         </div>
     )

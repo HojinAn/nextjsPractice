@@ -1,5 +1,4 @@
 import { Wine } from "../types/Wine";
-import Image from "next/image"
 
 interface WineProps {
     wineData: Wine
@@ -14,7 +13,6 @@ export const WineCard = ({ wineData }: WineProps) => {
             <p>🏡{winery}, {location}</p>
             <p>average rating: ⭐{average}</p>
             <p>{reviews}</p>
-            <Image src={image} alt={wine} />
         </div>
     )
 }

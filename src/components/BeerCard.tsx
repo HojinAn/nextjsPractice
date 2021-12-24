@@ -5,7 +5,7 @@ interface BeerProps {
 }
 
 export const BeerCard = ({ beerData }: BeerProps) => {
-    const { name, price, rating: { average, reviews }, image } = beerData;
+    const { name, price, rating: { average, reviews } } = beerData;
 
     return (
         <div>

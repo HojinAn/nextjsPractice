@@ -1,6 +1,8 @@
+import styled from "@emotion/styled";
 import { Error, Loading, WineCard } from ".";
 import { useWineData } from "../hooks/useWineData";
 import { Wine } from "../types/Wine";
+import { MEDIA_QUERY_END_POINT } from "../constants";
 
 interface WineContainerProps {
   name: string;
@@ -14,9 +16,9 @@ export const WineContainer = ({ name }: WineContainerProps) => {
 
   return (
     <div>
-      <h1>{name} Wine</h1>
+      <WineTitle>{name} Wine</WineTitle>
 
-      <main>
+      <WindeCardContainer>
         {data.map((wineData: Wine) => {
           return (
             <WineCard
@@ -25,7 +27,24 @@ export const WineContainer = ({ name }: WineContainerProps) => {
             />
           );
         })}
-      </main>
+      </WindeCardContainer>
     </div>
   );
 };
+
+const WineTitle = styled.h1`
+  line-height: 100%;
+  border-bottom: 1px solid #eee;
+`;
+
+const WindeCardContainer = styled.main`
+  display: grid;
+
+  @media (min-width: MEDIA_QUERY_END_POINT.MOBILE) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: MEDIA_QUERY_END_POINT.TABLET) {
+    grid-template-columns: repeat(4, 1fr);
+  } ;
+`;

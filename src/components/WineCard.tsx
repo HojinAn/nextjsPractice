@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import { Wine } from "../types/Wine";
 
 interface WineProps {
@@ -10,16 +11,40 @@ export const WineCard = ({ wineData }: WineProps) => {
     winery,
     rating: { average, reviews },
     location,
+    image,
   } = wineData;
 
   return (
-    <div>
-      <h1>🍷{wine}</h1>
+    <Container>
+      <img src={image} alt={wine} />
+      <h2>
+        🍷{wine}
+        <Average>average rating: ⭐{average}</Average>
+      </h2>
       <p>
         🏡{winery}, {location}
       </p>
-      <p>average rating: ⭐{average}</p>
       <p>{reviews}</p>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  alingn-items: center;
+  justify-content: flex-end;
+  padding: 1em;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+`;
+
+const Average = styled.span`
+  display: inline-block;
+  padding: 0.3em;
+  font-size: 16px;
+  margin-left: 0.5em;
+  color: white;
+  background: #2ac1bc;
+  border-radius: 3px;
+`;

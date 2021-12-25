@@ -1,32 +1,31 @@
 import { Error, Loading, WineCard } from ".";
 import { useWineData } from "../hooks/useWineData";
-import { Wine } from "../types/Wine"
+import { Wine } from "../types/Wine";
 
 interface WineContainerProps {
-    name: string,
+  name: string;
 }
 
 export const WineContainer = ({ name }: WineContainerProps) => {
-    const { data, error } = useWineData(name)
+  const { data, error } = useWineData(name);
 
-    if (error) return <Error />
-    if (!data) return <Loading />
+  if (error) return <Error />;
+  if (!data) return <Loading />;
 
-    return (
-        <div>
-            <h1>{name} Wine</h1>
+  return (
+    <div>
+      <h1>{name} Wine</h1>
 
-            <main>
-                {data.map((wineData: Wine) => {
-                    return (
-                        <WineCard
-                            key={`${name}-wine-list-${wineData.id}`}
-                            wineData={wineData}
-                        />
-                    )
-                })}
-            </main>
-        </div>
-    )
-}
-
+      <main>
+        {data.map((wineData: Wine) => {
+          return (
+            <WineCard
+              key={`${name}-wine-list-${wineData.id}`}
+              wineData={wineData}
+            />
+          );
+        })}
+      </main>
+    </div>
+  );
+};

@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
-import { BeerContainer } from "../../components/BeerContainer";
+import { BeerContainer } from "../../components";
 
 const AleBeerPage: NextPage = () => {
-    const name = 'ale';
+  const name = "ale";
 
-
-    return (
-        <div>
-            <BeerContainer name={name} />
-        </div>
-    )
-}
+  return (
+    <div>
+      <BeerContainer name={name} />
+    </div>
+  );
+};
 
 export default AleBeerPage;

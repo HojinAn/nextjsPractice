@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { WineContainer } from "../../components/WineContainer";
+import { WineContainer } from "../../components";
 
 const PortWinePage: NextPage = () => {
     const name = 'port';

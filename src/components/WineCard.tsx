@@ -6,25 +6,19 @@ interface WineProps {
 }
 
 export const WineCard = ({ wineData }: WineProps) => {
-  const {
-    wine,
-    winery,
-    rating: { average, reviews },
-    location,
-    image,
-  } = wineData;
+  const { wine, winery, rating, location, image } = wineData;
 
   return (
     <Container>
       <img src={image} alt={wine} />
       <h2>
         🍷{wine}
-        <Average>average rating: ⭐{average}</Average>
+        <Average>average rating: ⭐{rating.average}</Average>
       </h2>
       <p>
         🏡{winery}, {location}
       </p>
-      <p>{reviews}</p>
+      <p>{rating.reviews}</p>
     </Container>
   );
 };

@@ -1,40 +1,20 @@
-import Link from "next/link";
 import { ROUTES } from "../../constants";
-
-interface ROUTE {
-  ID: number;
-  PATH: string;
-  LABEL: string;
-  SUBS?: Array<ROUTE>;
-}
+import { MainMenu } from ".";
+import { ROUTE } from "../../types/Route";
+import styled from "@emotion/styled";
 
 export const Navigation = () => {
   return (
     <header>
-      <h1>Wine and Beers</h1>
+      <PageTitle>Wine and Beers</PageTitle>
       <nav>
         <ul>
           {ROUTES.map((routeObject: ROUTE) => {
             return (
-              <li key={`main-menu-${routeObject.ID}`}>
-                <Link href={routeObject.PATH}>
-                  <a>{routeObject.LABEL}</a>
-                </Link>
-                <ul>
-                  {routeObject.SUBS &&
-                    routeObject.SUBS.map((subRouteObject: ROUTE) => {
-                      return (
-                        <li key={`sub-menu-${subRouteObject.ID}`}>
-                          <Link
-                            href={`${routeObject.PATH}${subRouteObject.PATH}`}
-                          >
-                            <a>{subRouteObject.LABEL}</a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                </ul>
-              </li>
+              <MainMenu
+                key={`main-menu-${routeObject.ID}`}
+                routeObject={routeObject}
+              />
             );
           })}
         </ul>
@@ -42,3 +22,8 @@ export const Navigation = () => {
     </header>
   );
 };
+
+const PageTitle = styled.h1`
+  line-height: 180%;
+  border-bottom: 1px solid #eee;
+`;

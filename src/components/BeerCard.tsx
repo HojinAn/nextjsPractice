@@ -22,7 +22,7 @@ export const BeerCard = ({ beerData }: BeerProps) => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  alingn-items: center;
+  align-items: center;
   justify-content: flex-end;
   padding: 1em;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
